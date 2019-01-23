@@ -2,6 +2,7 @@ alias subl='open -a "Sublime Text"'
 alias osu='ssh fritzcam@access.engr.oregonstate.edu'
 alias osu-copy='ssh fritzcam@access.engr.oregonstate.edu "rm -rf ./CS/444/*" && scp -r ~/Desktop/School/CS444/* fritzcam@access.engr.oregonstate.edu:./CS/444'
 alias arduino='open -a "Arduino"'
+alias cdcapstone='cd ~/Desktop/School/Capstone/intouch-web'
 alias reload='source ~/.bash_profile; clear'
 alias cleartrash='rm -rf ~/.Trash/*'
 alias copypath='pwd | pbcopy'
@@ -11,6 +12,10 @@ alias new-system-setup='defaults write com.apple.dock autohide-time-modifier -fl
 # EXPORTS
 ###########################################
 export EDITOR='subl'
+###########################################
+# PATH ENVIRONMENT
+###########################################
+export PATH=~/Library/Python/2.7/bin:$PATH
 
 # ======================================================================#
 #       Terminal Prompt Colors                                                                                          #
@@ -66,3 +71,11 @@ export LSCOLORS="excxbxdxcxexexfxdxgxdx"
 #Functions
 #################################
 function youtube { url=$1; youtube-dl -o "$(pwd)/%(title)s--%(upload_date)s.%(ext)s" "$url"; }
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Library/google-cloud-sdk/path.bash.inc' ]; then . '/Library/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Library/google-cloud-sdk/completion.bash.inc' ]; then . '/Library/google-cloud-sdk/completion.bash.inc'; fi
